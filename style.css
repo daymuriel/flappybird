@@ -1,0 +1,17 @@
+html {
+    background-color: rgb(206, 221, 237);
+}
+
+div {
+    text-align: center;
+}
+
+canvas {
+    border: black solid 2px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+}
+
+h1 {
+    text-align: center;
+}
