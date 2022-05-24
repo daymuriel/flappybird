@@ -10,4 +10,10 @@ class ActorList {
             this.actors.push(actor);
         }
     }
+
+    removeActor( actor : Actor) : void {
+        let index : number = this.actors.indexOf(actor);
+        if (index > -1)
+            this.actors.splice(index, 1);
+    }
 }
