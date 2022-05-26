@@ -5,6 +5,7 @@ class Actor{
     constructor(x : number, y : number) {
         this.x = x;
         this.y = y;
+
     }
 
     draw() : void {
@@ -19,33 +20,46 @@ class Actor{
 }
 
 class Bird extends Actor{
+
+    img : HTMLImageElement
     constructor(x: number, y: number){
         super(x, y) 
+        this.img = new Image()
+        this.img.src = "images/flappy.jpg"
     }
 
     draw() : void {
-        ctx.fillStyle = "yellow"
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,10, 0 , Math.PI * 2);
-        ctx.closePath();
-        ctx.fill() 
+        ctx.drawImage(this.img, canvas.width/2 - 20,canvas.height/2 - 35, 75, 75) 
     }
+    
 }
 
 class Pipes extends Actor{
-    constructor(x: number, y: number){
-        super(x, y) 
+    x2 : number;
+    y2 : number;
+    imgup : HTMLImageElement;
+    imgdown : HTMLImageElement;
+
+    constructor(x: number, y: number, x2: number, y2: number){
+        super(x, y)
+        this.x2 = x2;
+        this.y2 = y2 
+        this.imgup = new Image()
+        this.imgup.src = "images/pipeUp.jpg"
+        this.imgdown = new Image()
+        this.imgdown.src = "images/pipeDown.jpg"
     }
 
     draw() : void {
-        ctx.fillStyle = "lime"
-        ctx.fillRect(this.x, this.y, 100, 200)
+        ctx.drawImage(this.imgdown, this.x, this.y, 300, 200)
+        ctx.drawImage(this.imgup, this.x2, this.y2, 300, 200)
     }
 
     update(): void{
-        this.x-= 5
+        this.x-= 15
+        this.x2-= 15
     
-        if(this.x > canvas.height + 50){
+        if((this.x && this.x2)  > canvas.width){
             actorlist.removeActor(this);
          }
         }

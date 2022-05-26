@@ -1,7 +1,7 @@
 "use strict";
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-const FRAME_LENGTH = 30;
+const FRAME_LENGTH = 120;
 const actorlist = new ActorList();
 let drawIntervalId = window.setInterval(draw, FRAME_LENGTH);
 function draw() {

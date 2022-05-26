@@ -7,6 +7,7 @@ div {
 }
 
 canvas {
+    background : "images/bg.jpg" 10% 340px;
     border: black solid 2px;
     margin: 0 auto;
 }
