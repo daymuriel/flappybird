@@ -51,8 +51,9 @@ class Pipes extends Actor{
     }
 
     draw() : void {
-        ctx.drawImage(this.imgdown, this.x, this.y, 300, 200)
-        ctx.drawImage(this.imgup, this.x2, this.y2, 300, 200)
+        let up : number = (Math.random()*200)+150
+        ctx.drawImage(this.imgdown, this.x, this.y, 300, up)
+        ctx.drawImage(this.imgup, this.x2, this.y2, 300, up - 150 )
     }
 
     update(): void{

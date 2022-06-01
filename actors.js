@@ -32,8 +32,9 @@ class Pipes extends Actor {
         this.imgdown.src = "images/pipeDown.jpg";
     }
     draw() {
-        ctx.drawImage(this.imgdown, this.x, this.y, 300, 200);
-        ctx.drawImage(this.imgup, this.x2, this.y2, 300, 200);
+        let up = (Math.random() * 200) + 150;
+        ctx.drawImage(this.imgdown, this.x, this.y, 300, up);
+        ctx.drawImage(this.imgup, this.x2, this.y2, 300, up - 150);
     }
     update() {
         this.x -= 15;

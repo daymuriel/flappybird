@@ -9,4 +9,4 @@ window.addEventListener("load", function() {
 setInterval(function(){
     actorlist.addActor(new Pipes(400, 0, 400, 400))
     actorlist.addActor(new Pipes(400, 400, 400, 400))
-}, 3000)
+}, 1500)
