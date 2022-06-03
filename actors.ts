@@ -37,10 +37,11 @@ class Bird extends Actor{
 class Pipes extends Actor{
     x2 : number;
     y2 : number;
+    up : number;
     imgup : HTMLImageElement;
     imgdown : HTMLImageElement;
 
-    constructor(x: number, y: number, x2: number, y2: number){
+    constructor(x: number, y: number, x2: number, y2: number, up? : number){
         super(x, y)
         this.x2 = x2;
         this.y2 = y2 
@@ -48,12 +49,12 @@ class Pipes extends Actor{
         this.imgup.src = "images/pipeUp.jpg"
         this.imgdown = new Image()
         this.imgdown.src = "images/pipeDown.jpg"
+        this.up = (Math.random()*200)+150
     }
 
     draw() : void {
-        let up : number = (Math.random()*200)+150
-        ctx.drawImage(this.imgdown, this.x, this.y, 300, up)
-        ctx.drawImage(this.imgup, this.x2, this.y2, 300, up - 150 )
+        ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up)
+        ctx.drawImage(this.imgup, this.x2, this.y2, 300, this.up + 150 )
     }
 
     update(): void{
