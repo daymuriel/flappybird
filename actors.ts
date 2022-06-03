@@ -34,34 +34,49 @@ class Bird extends Actor{
     
 }
 
-class Pipes extends Actor{
-    x2 : number;
-    y2 : number;
-    up : number;
+class upPipe extends Actor{
     imgup : HTMLImageElement;
-    imgdown : HTMLImageElement;
+    up : number;
 
-    constructor(x: number, y: number, x2: number, y2: number, up? : number){
+    constructor(x: number, y: number, up? : number){
         super(x, y)
-        this.x2 = x2;
-        this.y2 = y2 
         this.imgup = new Image()
         this.imgup.src = "images/pipeUp.jpg"
+        this.up = (Math.random()*200)+150
+    }
+
+    draw() : void {
+        ctx.drawImage(this.imgup, this.x, this.y, 300, this.up)
+    }
+
+    update(): void{
+        this.x-= 15
+    
+        if((this.x)  > canvas.width){
+            actorlist.removeActor(this);
+         }
+        }
+}
+
+class downPipe extends Actor{
+    imgdown : HTMLImageElement;
+    up : number;
+
+    constructor(x: number, y: number, up? : number){
+        super(x, y)
         this.imgdown = new Image()
         this.imgdown.src = "images/pipeDown.jpg"
         this.up = (Math.random()*200)+150
     }
 
     draw() : void {
-        ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up)
-        ctx.drawImage(this.imgup, this.x2, this.y2, 300, this.up + 150 )
+        ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up + 150 )
     }
 
     update(): void{
         this.x-= 15
-        this.x2-= 15
     
-        if((this.x && this.x2)  > canvas.width){
+        if((this.x)  > canvas.width){
             actorlist.removeActor(this);
          }
         }
