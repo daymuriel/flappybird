@@ -20,8 +20,11 @@ class Bird extends Actor {
     draw() {
         ctx.drawImage(this.img, this.x, this.y, 75, 75);
     }
+    jump() {
+        this.y -= 50;
+    }
     update() {
-        this.y += 11;
+        this.y += 20;
     }
 }
 class upPipe extends Actor {

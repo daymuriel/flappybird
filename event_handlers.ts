@@ -9,6 +9,12 @@ window.addEventListener("load", function() {
     actorlist.addActor(downpipe)
 });
 
+document.addEventListener("keydown", function(event: KeyboardEvent) {
+    if (event.key === " "){
+        bird.jump();
+    }
+});
+
 setInterval(function(){
     actorlist.addActor(new upPipe(400, 0))
     actorlist.addActor(new downPipe(400, 400))

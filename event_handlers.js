@@ -7,6 +7,11 @@ window.addEventListener("load", function () {
     let downpipe = new downPipe(400, 400);
     actorlist.addActor(downpipe);
 });
+document.addEventListener("keydown", function (event) {
+    if (event.key === " ") {
+        bird.jump();
+    }
+});
 setInterval(function () {
     actorlist.addActor(new upPipe(400, 0));
     actorlist.addActor(new downPipe(400, 400));
