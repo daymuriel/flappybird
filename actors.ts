@@ -29,7 +29,11 @@ class Bird extends Actor{
     }
 
     draw() : void {
-        ctx.drawImage(this.img, canvas.width/2 - 20,canvas.height/2 - 35, 75, 75) 
+        ctx.drawImage(this.img, this.x, this.y, 75, 75) 
+    }
+
+    update() : void {
+        this.y += 11
     }
     
 }

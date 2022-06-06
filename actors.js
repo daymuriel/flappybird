@@ -18,7 +18,10 @@ class Bird extends Actor {
         this.img.src = "images/flappy.jpg";
     }
     draw() {
-        ctx.drawImage(this.img, canvas.width / 2 - 20, canvas.height / 2 - 35, 75, 75);
+        ctx.drawImage(this.img, this.x, this.y, 75, 75);
+    }
+    update() {
+        this.y += 11;
     }
 }
 class upPipe extends Actor {

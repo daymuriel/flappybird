@@ -1,4 +1,4 @@
-let bird : Bird = new Bird( canvas.width / 2 , canvas.height / 2)
+let bird : Bird = new Bird( canvas.width / 2 - 20, canvas.height / 2 - 35)
 window.addEventListener("load", function() {
     actorlist.addActor(bird);
 

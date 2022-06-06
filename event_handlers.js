@@ -1,5 +1,5 @@
 "use strict";
-let bird = new Bird(canvas.width / 2, canvas.height / 2);
+let bird = new Bird(canvas.width / 2 - 20, canvas.height / 2 - 35);
 window.addEventListener("load", function () {
     actorlist.addActor(bird);
     let uppipe = new upPipe(400, 0);
