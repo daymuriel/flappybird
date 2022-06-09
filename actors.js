@@ -5,10 +5,12 @@ class Actor {
         this.y = y;
     }
     draw() {
-        // Update properties or other Actors in the actorList.
     }
     update() {
-        // Update properties or other Actors in the actorList.
+    }
+    top() {
+        let up = (Math.random() * 200) + 150;
+        return up;
     }
 }
 class Bird extends Actor {
@@ -30,9 +32,10 @@ class Bird extends Actor {
 class upPipe extends Actor {
     constructor(x, y, up) {
         super(x, y);
+        let top = super.top();
+        this.up = top;
         this.imgup = new Image();
         this.imgup.src = "images/pipeUp.jpg";
-        this.up = (Math.random() * 200) + 150;
     }
     draw() {
         ctx.drawImage(this.imgup, this.x, this.y, 300, this.up);
@@ -47,9 +50,10 @@ class upPipe extends Actor {
 class downPipe extends Actor {
     constructor(x, y, up) {
         super(x, y);
+        let top = super.top();
+        this.up = top;
         this.imgdown = new Image();
         this.imgdown.src = "images/pipeDown.jpg";
-        this.up = (Math.random() * 200) + 150;
     }
     draw() {
         ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up + 150);
