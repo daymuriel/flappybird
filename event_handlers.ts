@@ -13,7 +13,17 @@ document.addEventListener("keydown", function(event: KeyboardEvent) {
     if (event.key === " "){
         bird.jump();
     }
+
+    if (event.key === "ArrowUp") {
+        bird.jump();
+    } 
+
+    if (event.key === "w") {
+        bird.jump();
+    } 
+
 });
+
 
 setInterval(function(){
     actorlist.addActor(new upPipe(400, 0))
