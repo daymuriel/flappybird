@@ -19,3 +19,8 @@ h1 {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
+
+p {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
