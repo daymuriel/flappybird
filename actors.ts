@@ -9,21 +9,26 @@ class Actor{
     }
 
     draw() : void {
-        // Update properties or other Actors in the actorList.
         
     }
 
     update() : void {
-        // Update properties or other Actors in the actorList.
         
+    }
+ 
+    top() : number {
+        let up : number = (Math.random()*200)+150
+        return up
     }
 }
 
 class Bird extends Actor{
 
     img : HTMLImageElement
+    speed : number;
     constructor(x: number, y: number){
         super(x, y) 
+        this.speed = 0
         this.img = new Image()
         this.img.src = "images/flappy.jpg"
     }
@@ -33,11 +38,12 @@ class Bird extends Actor{
     }
 
     jump() : void {
-        this.y -= 50
+        this.speed = -5
     }
 
     update() : void {
-        this.y += 20
+        this.speed += 1
+        this.y += this.speed
     }
     
 }
@@ -45,12 +51,12 @@ class Bird extends Actor{
 class upPipe extends Actor{
     imgup : HTMLImageElement;
     up : number;
-
-    constructor(x: number, y: number, up? : number){
+    constructor(x: number, y: number, up?: number){
         super(x, y)
+        let top = super.top()
+        this.up = top
         this.imgup = new Image()
         this.imgup.src = "images/pipeUp.jpg"
-        this.up = (Math.random()*200)+150
     }
 
     draw() : void {
@@ -69,16 +75,16 @@ class upPipe extends Actor{
 class downPipe extends Actor{
     imgdown : HTMLImageElement;
     up : number;
-
     constructor(x: number, y: number, up? : number){
         super(x, y)
+        let top = super.top()
+        this.up = top
         this.imgdown = new Image()
         this.imgdown.src = "images/pipeDown.jpg"
-        this.up = (Math.random()*200)+150
     }
 
     draw() : void {
-        ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up + 150 )
+        ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up + 150)
     }
 
     update(): void{
