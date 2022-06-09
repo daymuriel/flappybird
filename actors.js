@@ -16,6 +16,7 @@ class Actor {
 class Bird extends Actor {
     constructor(x, y) {
         super(x, y);
+        this.speed = 0;
         this.img = new Image();
         this.img.src = "images/flappy.jpg";
     }
@@ -23,10 +24,11 @@ class Bird extends Actor {
         ctx.drawImage(this.img, this.x, this.y, 75, 75);
     }
     jump() {
-        this.y -= 50;
+        this.speed = -5;
     }
     update() {
-        this.y += 20;
+        this.speed += 1;
+        this.y += this.speed;
     }
 }
 class upPipe extends Actor {

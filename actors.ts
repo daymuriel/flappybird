@@ -25,8 +25,10 @@ class Actor{
 class Bird extends Actor{
 
     img : HTMLImageElement
+    speed : number;
     constructor(x: number, y: number){
         super(x, y) 
+        this.speed = 0
         this.img = new Image()
         this.img.src = "images/flappy.jpg"
     }
@@ -36,11 +38,12 @@ class Bird extends Actor{
     }
 
     jump() : void {
-        this.y -= 50
+        this.speed = -5
     }
 
     update() : void {
-        this.y += 20
+        this.speed += 1
+        this.y += this.speed
     }
     
 }
