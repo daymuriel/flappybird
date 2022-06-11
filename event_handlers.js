@@ -18,7 +18,10 @@ document.addEventListener("keydown", function (event) {
         bird.jump();
     }
 });
+document.addEventListener("click", function (event) {
+    bird.jump();
+});
 setInterval(function () {
     actorlist.addActor(new upPipe(400, 0));
     actorlist.addActor(new downPipe(400, 400));
-}, 1500);
+}, 1000);

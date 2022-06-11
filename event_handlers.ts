@@ -24,6 +24,10 @@ document.addEventListener("keydown", function(event: KeyboardEvent) {
 
 });
 
+document.addEventListener("click", function(event: MouseEvent) {
+    bird.jump();
+})
+
 
 setInterval(function(){
     actorlist.addActor(new upPipe(400, 0))
