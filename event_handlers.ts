@@ -28,4 +28,4 @@ document.addEventListener("keydown", function(event: KeyboardEvent) {
 setInterval(function(){
     actorlist.addActor(new upPipe(400, 0))
     actorlist.addActor(new downPipe(400, 400))
-}, 1000)
+}, 800)
