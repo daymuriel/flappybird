@@ -38,11 +38,11 @@ class Bird extends Actor{
     }
 
     jump() : void {
-        this.speed = -5
+        this.speed = -7
     }
 
     update() : void {
-        this.speed += 1
+        this.speed += 0.5
         this.y += this.speed
     }
     
@@ -64,7 +64,7 @@ class upPipe extends Actor{
     }
 
     update(): void{
-        this.x-= 15
+        this.x-= 10
     
         if((this.x)  > canvas.width){
             actorlist.removeActor(this);
@@ -88,7 +88,7 @@ class downPipe extends Actor{
     }
 
     update(): void{
-        this.x-= 15
+        this.x-= 10
     
         if((this.x)  > canvas.width){
             actorlist.removeActor(this);

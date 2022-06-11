@@ -1,6 +1,6 @@
 const canvas = document.querySelector("canvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
-const FRAME_LENGTH = 120
+const FRAME_LENGTH = 35
 const actorlist = new ActorList()
 
 let drawIntervalId : number | undefined = window.setInterval(draw, FRAME_LENGTH);

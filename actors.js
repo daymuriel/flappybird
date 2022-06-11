@@ -24,10 +24,10 @@ class Bird extends Actor {
         ctx.drawImage(this.img, this.x, this.y, 75, 75);
     }
     jump() {
-        this.speed = -5;
+        this.speed = -7;
     }
     update() {
-        this.speed += 1;
+        this.speed += 0.5;
         this.y += this.speed;
     }
 }
@@ -43,7 +43,7 @@ class upPipe extends Actor {
         ctx.drawImage(this.imgup, this.x, this.y, 300, this.up);
     }
     update() {
-        this.x -= 15;
+        this.x -= 10;
         if ((this.x) > canvas.width) {
             actorlist.removeActor(this);
         }
@@ -61,7 +61,7 @@ class downPipe extends Actor {
         ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up + 150);
     }
     update() {
-        this.x -= 15;
+        this.x -= 10;
         if ((this.x) > canvas.width) {
             actorlist.removeActor(this);
         }
