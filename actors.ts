@@ -84,7 +84,7 @@ class downPipe extends Actor{
     }
 
     draw() : void {
-        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height - this.up)
+        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height-(this.up + 150))
     }
 
     update(): void{

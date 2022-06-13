@@ -48,6 +48,13 @@ class upPipe extends Actor {
             actorlist.removeActor(this);
         }
     }
+    updateScore() {
+        const score = document.querySelector("p");
+        let count = 0;
+        if ((this.x) > canvas.width / 2)
+            count++;
+        score.textContent = String(`Score: ${count}`);
+    }
 }
 class downPipe extends Actor {
     constructor(x, y, up) {
@@ -58,7 +65,7 @@ class downPipe extends Actor {
         this.imgdown.src = "images/pipeDown.jpg";
     }
     draw() {
-        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height - this.up);
+        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height - (this.up + 150));
     }
     update() {
         this.x -= 10;

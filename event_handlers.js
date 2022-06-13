@@ -17,18 +17,7 @@ document.addEventListener("keydown", function (event) {
     if (event.key == "p" || event.key == "P") {
         continueDrawing();
     }
-});
-background.onload = function () {
-    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-};
-document.addEventListener("keydown", function (event) {
-    if (event.key === " ") {
-        bird.jump();
-    }
-    if (event.key === "ArrowUp") {
-        bird.jump();
-    }
-    if (event.key === "w") {
+    if (event.key === " " || event.key === "ArrowUp" || event.key === "w") {
         bird.jump();
     }
 });
