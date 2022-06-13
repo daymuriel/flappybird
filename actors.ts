@@ -4,7 +4,7 @@ class Actor{
 
     constructor(x : number, y : number) {
         this.x = x;
-        this.y = y;
+        this.y = (Math.random()*200)+150
 
     }
 
@@ -14,11 +14,6 @@ class Actor{
 
     update() : void {
         
-    }
- 
-    top() : number {
-        let up : number = (Math.random()*200)+150
-        return up
     }
 }
 
@@ -47,44 +42,20 @@ class Bird extends Actor{
     }
     
 }
-
-class upPipe extends Actor{
+class pairPipe extends Actor{
     imgup : HTMLImageElement;
-    up : number;
-    constructor(x: number, y: number, up?: number){
+    imgdown : HTMLImageElement;
+    constructor(x: number, y: number){
         super(x, y)
-        let top = super.top()
-        this.up = top
         this.imgup = new Image()
         this.imgup.src = "images/pipeUp.jpg"
-    }
-
-    draw() : void {
-        ctx.drawImage(this.imgup, this.x, this.y, 300, this.up)
-    }
-
-    update(): void{
-        this.x-= 10
-    
-        if((this.x)  > canvas.width){
-            actorlist.removeActor(this);
-         }
-        }
-}
-
-class downPipe extends Actor{
-    imgdown : HTMLImageElement;
-    up : number;
-    constructor(x: number, y: number, up? : number){
-        super(x, y)
-        let top = super.top()
-        this.up = top
         this.imgdown = new Image()
         this.imgdown.src = "images/pipeDown.jpg"
     }
 
     draw() : void {
-        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height-(this.up + 150))
+        ctx.drawImage(this.imgup, this.x, 0, 300, this.y)
+        ctx.drawImage(this.imgdown, this.x, this.y + 150, 300, canvas.height-(this.y + 150))
     }
 
     update(): void{

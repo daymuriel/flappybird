@@ -4,14 +4,18 @@ background.src = "images/bg.jpg";
 background.onload = function () {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 };
+const score = document.querySelector("p");
+function updateScore() {
+    let count = 0;
+    let place = pairPipe.x;
+    if ((place) > canvas.width / 2)
+        count++;
+    score.textContent = String(`Score: ${count}`);
+}
 let bird = new Bird(canvas.width / 2 - 20, canvas.height / 2 - 35);
 window.addEventListener("load", function () {
     pauseDrawing();
     actorlist.addActor(bird);
-    let uppipe = new upPipe(400, 0);
-    actorlist.addActor(uppipe);
-    let downpipe = new downPipe(400, 0);
-    actorlist.addActor(downpipe);
 });
 document.addEventListener("keydown", function (event) {
     if (event.key == "p" || event.key == "P") {
@@ -25,6 +29,5 @@ document.addEventListener("click", function (event) {
     bird.jump();
 });
 setInterval(function () {
-    actorlist.addActor(new upPipe(400, 0));
-    actorlist.addActor(new downPipe(400, 400));
+    actorlist.addActor(new pairPipe(400, 0));
 }, 950);

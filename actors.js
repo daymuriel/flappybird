@@ -2,15 +2,11 @@
 class Actor {
     constructor(x, y) {
         this.x = x;
-        this.y = y;
+        this.y = (Math.random() * 200) + 150;
     }
     draw() {
     }
     update() {
-    }
-    top() {
-        let up = (Math.random() * 200) + 150;
-        return up;
     }
 }
 class Bird extends Actor {
@@ -31,41 +27,17 @@ class Bird extends Actor {
         this.y += this.speed;
     }
 }
-class upPipe extends Actor {
-    constructor(x, y, up) {
+class pairPipe extends Actor {
+    constructor(x, y) {
         super(x, y);
-        let top = super.top();
-        this.up = top;
         this.imgup = new Image();
         this.imgup.src = "images/pipeUp.jpg";
-    }
-    draw() {
-        ctx.drawImage(this.imgup, this.x, this.y, 300, this.up);
-    }
-    update() {
-        this.x -= 10;
-        if ((this.x) > canvas.width) {
-            actorlist.removeActor(this);
-        }
-    }
-    updateScore() {
-        const score = document.querySelector("p");
-        let count = 0;
-        if ((this.x) > canvas.width / 2)
-            count++;
-        score.textContent = String(`Score: ${count}`);
-    }
-}
-class downPipe extends Actor {
-    constructor(x, y, up) {
-        super(x, y);
-        let top = super.top();
-        this.up = top;
         this.imgdown = new Image();
         this.imgdown.src = "images/pipeDown.jpg";
     }
     draw() {
-        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height - (this.up + 150));
+        ctx.drawImage(this.imgup, this.x, 0, 300, this.y);
+        ctx.drawImage(this.imgdown, this.x, this.y + 150, 300, canvas.height - (this.y + 150));
     }
     update() {
         this.x -= 10;

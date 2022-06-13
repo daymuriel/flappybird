@@ -7,7 +7,7 @@ let background = new Image()
 const score = document.querySelector("p") as HTMLParagraphElement;
 function updateScore(){ 
     let count : number = 0
-    let place : number = upPipe.x
+    let place : number = pairPipe.x
     if ((place) > canvas.width/2)
         count++
     score.textContent = String(`Score: ${count}`)
@@ -18,12 +18,6 @@ window.addEventListener("load", function() {
     pauseDrawing()
 
     actorlist.addActor(bird);
-
-    let uppipe : upPipe = new upPipe(400,0)
-    actorlist.addActor(uppipe)
-
-    let downpipe : downPipe = new downPipe(400,0)
-    actorlist.addActor(downpipe)
 });
 
 document.addEventListener("keydown", function(event: KeyboardEvent) {
@@ -42,6 +36,5 @@ document.addEventListener("click", function(event: MouseEvent) {
 })
 
 setInterval(function(){
-    actorlist.addActor(new upPipe(400, 0))
-    actorlist.addActor(new downPipe(400, 400))
+    actorlist.addActor(new pairPipe(400, 0))
 }, 950)

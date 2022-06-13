@@ -7,6 +7,7 @@ let drawIntervalId = window.setInterval(draw, FRAME_LENGTH);
 function draw() {
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     // Re-draw all the actors!
     for (const actor of actorlist.actors) {
         actor.draw();
