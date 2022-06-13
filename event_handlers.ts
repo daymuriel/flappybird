@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
     let uppipe : upPipe = new upPipe(400,0)
     actorlist.addActor(uppipe)
 
-    let downpipe : downPipe = new downPipe(400,400)
+    let downpipe : downPipe = new downPipe(400,0)
     actorlist.addActor(downpipe)
 });
 
@@ -24,8 +24,7 @@ document.addEventListener("keydown", function(event: KeyboardEvent) {
 
 });
 
-
 setInterval(function(){
     actorlist.addActor(new upPipe(400, 0))
     actorlist.addActor(new downPipe(400, 400))
-}, 800)
+}, 950)

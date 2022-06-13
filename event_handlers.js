@@ -4,7 +4,7 @@ window.addEventListener("load", function () {
     actorlist.addActor(bird);
     let uppipe = new upPipe(400, 0);
     actorlist.addActor(uppipe);
-    let downpipe = new downPipe(400, 400);
+    let downpipe = new downPipe(400, 0);
     actorlist.addActor(downpipe);
 });
 document.addEventListener("keydown", function (event) {
@@ -21,4 +21,4 @@ document.addEventListener("keydown", function (event) {
 setInterval(function () {
     actorlist.addActor(new upPipe(400, 0));
     actorlist.addActor(new downPipe(400, 400));
-}, 800);
+}, 950);

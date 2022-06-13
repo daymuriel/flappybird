@@ -27,7 +27,7 @@ class Bird extends Actor {
         this.speed = -7;
     }
     update() {
-        this.speed += 0.5;
+        this.speed += 0.7;
         this.y += this.speed;
     }
 }
@@ -58,7 +58,7 @@ class downPipe extends Actor {
         this.imgdown.src = "images/pipeDown.jpg";
     }
     draw() {
-        ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up + 150);
+        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height - this.up);
     }
     update() {
         this.x -= 10;

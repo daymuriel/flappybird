@@ -42,7 +42,7 @@ class Bird extends Actor{
     }
 
     update() : void {
-        this.speed += 0.5
+        this.speed += 0.7
         this.y += this.speed
     }
     
@@ -84,7 +84,7 @@ class downPipe extends Actor{
     }
 
     draw() : void {
-        ctx.drawImage(this.imgdown, this.x, this.y, 300, this.up + 150)
+        ctx.drawImage(this.imgdown, this.x, this.up + 150, 300, canvas.height - this.up)
     }
 
     update(): void{
