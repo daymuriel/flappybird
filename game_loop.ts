@@ -26,6 +26,9 @@ function pauseDrawing(){
     if (drawIntervalId !== undefined)
         clearInterval(drawIntervalId);
     drawIntervalId = undefined;
+
+    ctx.font = "40px Comic Sans MS"
+    ctx.fillText("Press 'P' to Play!", canvas.width/2 - 152, canvas.height/2)
 }
 
 function continueDrawing(){
