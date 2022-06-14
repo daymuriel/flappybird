@@ -23,8 +23,6 @@ function death() {
     pauseDrawing();
     ctx.font = "40px Comic Sans MS";
     ctx.fillText("LOSER u died!", canvas.width / 2 - 152, canvas.height / 2);
-    ctx.font = "20px Comic Sans MS";
-    ctx.fillText("press 'T' to try again", canvas.width / 2 - 152, canvas.height / 2 + 45);
 }
 document.addEventListener("keydown", function (event) {
     if (event.key == "p" || event.key == "P") {
@@ -32,9 +30,6 @@ document.addEventListener("keydown", function (event) {
     }
     if (event.key === " " || event.key === "ArrowUp" || event.key === "w") {
         bird.jump();
-    }
-    if (event.key === "t") {
-        draw();
     }
 });
 document.addEventListener("click", function (event) {

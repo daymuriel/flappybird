@@ -49,8 +49,10 @@ class PairPipe extends Actor {
             actorlist.removeActor(this);
             updateScore();
         }
-        if ((this.y) == (bird.y)) {
-            death();
+        if ((this.x + (0.42 * 300) <= bird.x) && (this.x + (0.55 * 300) >= bird.x)) {
+            if ((bird.y + 30 <= this.y) || (bird.y + 30 >= this.y + 150)) {
+                death();
+            }
         }
     }
 }
