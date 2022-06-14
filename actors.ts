@@ -9,11 +9,9 @@ class Actor{
     }
 
     draw() : void {
-        
     }
 
     update() : void {
-        
     }
 }
 
@@ -42,7 +40,7 @@ class Bird extends Actor{
     }
     
 }
-class pairPipe extends Actor{
+class PairPipe extends Actor{
     imgup : HTMLImageElement;
     imgdown : HTMLImageElement;
     constructor(x: number, y: number){
@@ -61,8 +59,9 @@ class pairPipe extends Actor{
     update(): void{
         this.x-= 10
     
-        if((this.x)  > canvas.width){
+        if((this.x) < (-canvas.width/2)){
             actorlist.removeActor(this);
-         }
+            updateScore();
         }
+    }
 }

@@ -27,7 +27,7 @@ class Bird extends Actor {
         this.y += this.speed;
     }
 }
-class pairPipe extends Actor {
+class PairPipe extends Actor {
     constructor(x, y) {
         super(x, y);
         this.imgup = new Image();
@@ -41,8 +41,9 @@ class pairPipe extends Actor {
     }
     update() {
         this.x -= 10;
-        if ((this.x) > canvas.width) {
+        if ((this.x) < (-canvas.width / 2)) {
             actorlist.removeActor(this);
+            updateScore();
         }
     }
 }
