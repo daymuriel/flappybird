@@ -22,6 +22,14 @@ window.addEventListener("load", function() {
     actorlist.addActor(bird);
 });
 
+function death(){
+   pauseDrawing();
+    ctx.font = "40px Comic Sans MS"
+    ctx.fillText("LOSER u died!", canvas.width/2 - 152, canvas.height/2)
+    ctx.font = "20px Comic Sans MS"
+    ctx.fillText("press 'T' to try again", canvas.width/2 - 152, canvas.height/2 + 45)
+}
+
 document.addEventListener("keydown", function(event: KeyboardEvent) {
     if (event.key == "p" || event.key == "P"){
         continueDrawing()
@@ -29,6 +37,10 @@ document.addEventListener("keydown", function(event: KeyboardEvent) {
 
     if (event.key === " " || event.key === "ArrowUp" || event.key === "w"){
         bird.jump();
+    }
+
+    if (event.key === "t"){
+        draw()
     }
 });
 

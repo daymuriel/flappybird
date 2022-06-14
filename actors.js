@@ -25,6 +25,10 @@ class Bird extends Actor {
     update() {
         this.speed += 0.7;
         this.y += this.speed;
+        if ((this.y) > (canvas.height)) {
+            death();
+            actorlist.removeActor(this);
+        }
     }
 }
 class PairPipe extends Actor {
@@ -44,6 +48,9 @@ class PairPipe extends Actor {
         if ((this.x) < (-canvas.width / 2)) {
             actorlist.removeActor(this);
             updateScore();
+        }
+        if ((this.y) == (bird.y)) {
+            death();
         }
     }
 }
